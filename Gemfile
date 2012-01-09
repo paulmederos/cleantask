@@ -10,9 +10,6 @@ gem 'nifty-generators', :git => 'https://github.com/ryanb/nifty-generators.git'
 
 # User for Authentication and User management
 gem 'devise'
-gem 'omniauth'
-gem 'omniauth-linkedin', :git => 'https://github.com/skorks/omniauth-linkedin.git'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
