@@ -1,7 +1,12 @@
 <h1>We are at Home</h1>
 <p>This will be the dashboard to the app, with a quick-glance overview.</p>
 
+
+
 <h2>Client List</h2>
-
-
+	<ul>
+	<% @clients.each do |client| %>
+		<li>client.id</li>
+	<% end %>
+	</ul>
 <h2>Facility List</h2>

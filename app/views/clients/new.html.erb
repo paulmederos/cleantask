@@ -1,0 +1,12 @@
+<%= form_for @client, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+  
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+  <%= f.text_field :billing_address %>
+	<%= f.text_field :billing_address %>
+	<%= f.text_field :billing_zip %>
+	<%= f.text_field :contact_name %>
+	<%= f.text_field :contact_email %>
+	<%= f.text_field :contact_phone %>
+  <%= f.submit "Create" %>
+<% end %>

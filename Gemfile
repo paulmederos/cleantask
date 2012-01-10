@@ -7,6 +7,7 @@ gem 'json'
 
 gem 'jquery-rails'
 gem 'nifty-generators', :git => 'https://github.com/ryanb/nifty-generators.git'
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # User for Authentication and User management
 gem 'devise'

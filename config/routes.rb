@@ -9,6 +9,8 @@ Cleantask::Application.routes.draw do
     match "/signin" =>  "devise/sessions#new", :as => :signin
   end
   
+  resources :clients
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
