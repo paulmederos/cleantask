@@ -5,7 +5,7 @@
 
 	<div class="row">
 		<div class="span4">
-			<%= link_to 'Back', :back %>
+			<%= link_to 'Back to Dashboard', :root %>
 			<h2>ID: <%= @client.id %></h2>
 			<h6>Created <%= @client.created_at.strftime("%m/%d/%Y | %I:%M%p") %>.</h6>
 			<p>This is where a description of the client would go. Maybe
@@ -25,8 +25,11 @@
 			</div>
 		
 				<div class="panel">
+					<%= link_to 'Add Facility', new_facility_path, :class => 'btn primary pull-right' %>
 					<h3>Facilities Served</h3>
-				
+						<% @client.facilities.each do |facility| %>
+							<li><%= link_to "#{facility.name}", facility %></li>
+						<% end %>
 				</div>
 		</div>
 	</div>

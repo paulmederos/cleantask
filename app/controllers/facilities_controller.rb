@@ -10,7 +10,7 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @facility }
@@ -19,6 +19,7 @@ class FacilitiesController < ApplicationController
 
   def new
     @facility = Facility.new
+    @clients = Client.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -31,8 +32,9 @@ class FacilitiesController < ApplicationController
   end
 
   def create
+    puts "hi there"
     @facility = Facility.new(params[:facility])
-
+    
     respond_to do |format|
       if @facility.save
         format.html { redirect_to @facility, notice: 'Facility was successfully created.' }

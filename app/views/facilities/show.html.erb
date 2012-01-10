@@ -1,0 +1,33 @@
+<section id="facility_show">
+	<div class ="page-header">
+		<h1><%= @facility.client.name unless @facility.client == nil %> : <%= @facility.name %></h1>
+	</div>
+
+	<div class="row">
+		<div class="span4">
+			<%= link_to 'Back', :back %>
+			<h2>ID: <%= @facility.id %></h2>
+			<h6>Created <%= @facility.created_at.strftime("%m/%d/%Y | %I:%M%p") %>.</h6>
+			<p>This is where a description of the client would go. Maybe
+				a list of all Client Users that have access to the system?</p>
+			<%= button_to 'Delete Facility', facility_path, :method => :delete, 
+										:confirm => "Are you sure you want to remove this facility? This is irreversible!", :class => 'btn danger' %>
+		</div>
+		<div class="span12">
+			<div class="panel">
+				<h3>Contact Information</h3>
+				<p><b>Facility Name:</b> <%= @facility.name %></p>
+				<p><b>Physical address:</b> <%= "#{@facility.address} | #{@facility.zip}" %></p>
+				<p><b>Local Contact:</b> <%= @facility.contact_name %></p>
+				<p><b>Local Contact Email:</b> <%= link_to @facility.contact_email,
+				 														 "mailto:#{@facility.contact_email}"%></p>
+				<p><b>Local Contact Phone:</b> <%= @facility.contact_phone %></p>
+			</div>
+		
+				<div class="panel">
+					<h3>Cleaning Crew</h3>
+				
+				</div>
+		</div>
+	</div>
+</section>

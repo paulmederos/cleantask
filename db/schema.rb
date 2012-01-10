@@ -14,6 +14,8 @@
 ActiveRecord::Schema.define(:version => 20120110033939) do
 
   create_table "client_associations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120110033939) do
     t.string   "contact_name"
     t.string   "contact_email"
     t.string   "contact_phone"
+    t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
