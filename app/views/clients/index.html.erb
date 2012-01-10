@@ -16,7 +16,7 @@
 			<div class="panel">
 			<ul>
 				<% @clients.each do |client| %>
-					<li><%= link_to "#{client.id}", client %></li>
+					<li><%= link_to "#{client.name}", client %></li>
 				<% end %>
 			</ul>
 			</div>

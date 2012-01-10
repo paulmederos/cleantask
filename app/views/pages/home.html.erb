@@ -12,7 +12,7 @@
 		<div class="span6">
 			<div class="panel">
 				<%= link_to 'Add Client', new_client_path, :class => 'btn primary pull-right'%>
-				<h3>All Clients</h3>	
+				<h3><%= link_to 'All Clients', clients_path %></h3>	
 				<ul>
 					<% @clients.each do |client| %>
 						<li><%= link_to "#{client.name}", client %></li>
