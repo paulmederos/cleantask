@@ -44,5 +44,11 @@ module Cleantask
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Mailer for Devise
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    
+    # For Heroku deployment on Rails 3.1 (as necessitated by the Devise installer)
+    config.assets.initialize_on_precompile = false
   end
 end
