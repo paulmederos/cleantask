@@ -1,6 +1,6 @@
 <section id="facility_new">
 	<div class ="page-header">
-		<h1>Edit <i><%= @facility.name.titleize %></i> Facility</h1>
+		<h1>Editing <%= @facility.name.titleize %></h1>
 	</div>
 
 	<div class="row">
@@ -12,7 +12,7 @@
 		</div>
 		<div class="span12">
 			<div class="panel">
-			<%= form_for @facility, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+			<%= form_for @facility, :html => {:class => "nifty_form"} do |f| %>
 	  		<fieldset>
 					<legend>Basic Details</legend>
 					
