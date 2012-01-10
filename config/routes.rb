@@ -1,8 +1,13 @@
 Cleantask::Application.routes.draw do
- 
+  
   devise_for :users
 
-  root :to => "home#index"
+  root :to => "pages#home"
+  
+  devise_scope :user do
+    match "/signup" =>  "devise/registrations#new", :as => :signup
+    match "/signin" =>  "devise/sessions#new", :as => :signin
+  end
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
