@@ -1,0 +1,25 @@
+<section id="facility_index">
+	<div class="page-header">
+	    <h1>Facilities Index</h1>
+	</div>
+	<div class="row">
+		<div class="span4">
+			<h2>The whole list</h2>
+			<p>This is where the entire list of facilities will
+				go for a particular user. They will be able 
+				to see quick glances of statuses.</p>
+				<ul class="unstyled">
+					<li><%= link_to 'Let\'s add a facility!', new_facility_path, :class => 'btn primary' %></li>
+				</ul>
+		</div>
+		<div class="span12">
+			<div class="panel">
+			<ul>
+				<% @facilities.each do |facility| %>
+					<li><%= link_to "#{facility.name}", facility %></li>
+				<% end %>
+			</ul>
+			</div>
+		</div>
+	</div>
+</section>
