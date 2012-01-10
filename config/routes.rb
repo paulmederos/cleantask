@@ -11,6 +11,7 @@ Cleantask::Application.routes.draw do
   
   resources :clients
   resources :facilities
+  resources :areas
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
