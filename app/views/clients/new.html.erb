@@ -5,22 +5,60 @@
 <div class="row">
 	<div class="span4">
 		<%= link_to 'Back', :back %>
-		<h2>Default styles</h2>
-	  <p>All forms are given default styles to present them in a readable and scalable way. Styles are provided for text inputs, select lists, textareas, radio buttons and checkboxes, and buttons.</p>
+		<h2>Adding a Client</h2>
+	  <p>Your clients are the lifeblood of your organization. Here, you'll be able
+		to enter all their corporate details for you to keep track of them.</p>
 	</div>
 	<div class="span12">
 		<div class="panel">
 		<%= form_for @client, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
-  
-			<%= f.label :name %>
-			<%= f.text_field :name %>
-		  <%= f.text_field :billing_address %>
-			<%= f.text_field :billing_address %>
-			<%= f.text_field :billing_zip %>
-			<%= f.text_field :contact_name %>
-			<%= f.text_field :contact_email %>
-			<%= f.text_field :contact_phone %>
-		  <%= f.submit "Create", :class => 'btn primary' %>
+  		<fieldset>
+				<legend>Basic Details</legend>
+				<div class="clearfix">
+				  <%= f.label :name %>
+	        <div class="input">
+	          <%= f.text_field :name %>
+	        </div>
+	      </div>
+
+				<div class="clearfix">
+				  <%= f.label :billing_address %>
+	        <div class="input">
+	          <%= f.text_field :billing_address %>
+	        </div>
+	      </div>
+
+				<div class="clearfix">
+				  <%= f.label :billing_zip %>
+	        <div class="input">
+	          <%= f.text_field :billing_zip, :class => 'mini' %>
+	        </div>
+	      </div>
+
+				<div class="clearfix">
+				  <%= f.label :contact_name %>
+	        <div class="input">
+	          <%= f.text_field :contact_name %>
+	        </div>
+	      </div>
+			
+				<div class="clearfix">
+				  <%= f.label :contact_email %>
+	        <div class="input">
+	          <%= f.text_field :contact_email %>
+	        </div>
+	      </div>
+
+				<div class="clearfix">
+				  <%= f.label :contact_phone %>
+	        <div class="input">
+	          <%= f.text_field :contact_phone %>
+	        </div>
+	      </div>
+				<div class="actions">
+					<%= f.submit "Create New Client", :class => 'btn success' %>
+	      </div>
+			</fieldset>
 		<% end %>
 		</div>
 	</div>

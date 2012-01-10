@@ -8,8 +8,6 @@ class ClientsController < ApplicationController
     end
   end
 
-  # GET /calendars/1
-  # GET /calendars/1.json
   def show
     @client = Client.find(params[:id])
 
@@ -19,8 +17,6 @@ class ClientsController < ApplicationController
     end
   end
 
-  # GET /calendars/new
-  # GET /calendars/new.json
   def new
     @client = Client.new
 
@@ -30,15 +26,12 @@ class ClientsController < ApplicationController
     end
   end
 
-  # GET /calendars/1/edit
   def edit
     @client = Client.find(params[:id])
   end
 
-  # POST /calendars
-  # POST /calendars.json
   def create
-    @client = Client.new(params[:calendar])
+    @client = Client.new(params[:client])
 
     respond_to do |format|
       if @client.save
@@ -51,13 +44,11 @@ class ClientsController < ApplicationController
     end
   end
 
-  # PUT /calendars/1
-  # PUT /calendars/1.json
   def update
     @client = Client.find(params[:id])
 
     respond_to do |format|
-      if @client.update_attributes(params[:calendar])
+      if @client.update_attributes(params[:client])
         format.html { redirect_to @client, notice: 'Client was successfully updated.' }
         format.json { head :ok }
       else
@@ -67,8 +58,6 @@ class ClientsController < ApplicationController
     end
   end
 
-  # DELETE /calendars/1
-  # DELETE /calendars/1.json
   def destroy
     @client = Client.find(params[:id])
     @client.destroy

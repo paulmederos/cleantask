@@ -7,9 +7,14 @@
  *= require_tree . 
 */
 
+.topbar {
+	position:relative !important;
+}
+
 .panel {
 	background: rgba(150,150,150,.1);
 	border:1px solid rgba(150,150,150,.2);
 	border-radius:4px;
 	padding:1em;
+	margin-bottom:1em;
 }

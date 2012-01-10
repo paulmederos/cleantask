@@ -1,0 +1,29 @@
+<div class ="page-header">
+	<h1><%= @client.name %></h1>
+</div>
+
+<div class="row">
+	<div class="span4">
+		<%= link_to 'Back', :back %>
+		<h2>ID: <%= @client.id %></h2>
+		<h6>Created <%= @client.created_at.strftime("%m/%d/%Y | %I:%M%p") %>.</h6>
+		<p>This is where a description of the client would go. Maybe
+			a list of all Client Users that have access to the system?</p>
+	</div>
+	<div class="span12">
+		<div class="panel">
+			<h3>Contact Information</h3>
+			<p><b>Name:</b> <%= @client.name %></p>
+			<p><b>Billing address:</b> <%= "#{@client.billing_address} | #{@client.billing_zip}" %></p>
+			<p><b>Contact:</b> <%= @client.contact_name %></p>
+			<p><b>Contact email:</b> <%= link_to @client.contact_email,
+			 														 "mailto:#{@client.contact_email}"%></p>
+			<p><b>Contact phone:</b> <%= @client.contact_phone %></p>
+		</div>
+		
+			<div class="panel">
+				<h3>Facilities Served</h3>
+				
+			</div>
+	</div>
+</div>

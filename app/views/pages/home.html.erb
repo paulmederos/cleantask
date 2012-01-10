@@ -1,12 +1,32 @@
-<h1>We are at Home</h1>
-<p>This will be the dashboard to the app, with a quick-glance overview.</p>
-
-
-
-<h2>Client List</h2>
-	<ul>
-	<% @clients.each do |client| %>
-		<li>client.id</li>
-	<% end %>
-	</ul>
-<h2>Facility List</h2>
+<section id="client_index">
+	<div class="page-header">
+	    <h1>Dashboard</h1>
+	</div>
+	<div class="row">
+		<div class="span4">
+			<h2>We are now home!</h2>
+			<p>This is where the entire list of clients will
+				go for a particular user. They will be able 
+				to see quick glances of statuses.</p>
+		</div>
+		<div class="span6">
+			<div class="panel">
+				<%= link_to 'Add Client', new_client_path, :class => 'btn primary pull-right'%>
+				<h3>All Clients</h3>	
+				<ul>
+					<% @clients.each do |client| %>
+						<li><%= link_to "#{client.name}", client %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="span6">
+			<div class="panel">
+				<h3>All Facilities</h3>
+				<ul>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
