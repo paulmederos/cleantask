@@ -1,65 +1,67 @@
-<div class ="page-header">
-	<h1>Create a new Client</h1>
-</div>
-
-<div class="row">
-	<div class="span4">
-		<%= link_to 'Back', :back %>
-		<h2>Adding a Client</h2>
-	  <p>Your clients are the lifeblood of your organization. Here, you'll be able
-		to enter all their corporate details for you to keep track of them.</p>
+<section id="client_new">
+	<div class ="page-header">
+		<h1>Create a new Client</h1>
 	</div>
-	<div class="span12">
-		<div class="panel">
-		<%= form_for @client, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
-  		<fieldset>
-				<legend>Basic Details</legend>
-				<div class="clearfix">
-				  <%= f.label :name %>
-	        <div class="input">
-	          <%= f.text_field :name %>
-	        </div>
-	      </div>
 
-				<div class="clearfix">
-				  <%= f.label :billing_address %>
-	        <div class="input">
-	          <%= f.text_field :billing_address %>
-	        </div>
-	      </div>
+	<div class="row">
+		<div class="span4">
+			<%= link_to 'Back', :back %>
+			<h2>Adding a Client</h2>
+		  <p>Your clients are the lifeblood of your organization. Here, you'll be able
+			to enter all their corporate details for you to keep track of them.</p>
+		</div>
+		<div class="span12">
+			<div class="panel">
+			<%= form_for @client, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+	  		<fieldset>
+					<legend>Basic Details</legend>
+					<div class="clearfix">
+					  <%= f.label :name %>
+		        <div class="input">
+		          <%= f.text_field :name %>
+		        </div>
+		      </div>
 
-				<div class="clearfix">
-				  <%= f.label :billing_zip %>
-	        <div class="input">
-	          <%= f.text_field :billing_zip, :class => 'mini' %>
-	        </div>
-	      </div>
+					<div class="clearfix">
+					  <%= f.label :billing_address %>
+		        <div class="input">
+		          <%= f.text_field :billing_address %>
+		        </div>
+		      </div>
 
-				<div class="clearfix">
-				  <%= f.label :contact_name %>
-	        <div class="input">
-	          <%= f.text_field :contact_name %>
-	        </div>
-	      </div>
+					<div class="clearfix">
+					  <%= f.label :billing_zip %>
+		        <div class="input">
+		          <%= f.text_field :billing_zip, :class => 'mini' %>
+		        </div>
+		      </div>
+
+					<div class="clearfix">
+					  <%= f.label :contact_name %>
+		        <div class="input">
+		          <%= f.text_field :contact_name %>
+		        </div>
+		      </div>
 			
-				<div class="clearfix">
-				  <%= f.label :contact_email %>
-	        <div class="input">
-	          <%= f.text_field :contact_email %>
-	        </div>
-	      </div>
+					<div class="clearfix">
+					  <%= f.label :contact_email %>
+		        <div class="input">
+		          <%= f.text_field :contact_email %>
+		        </div>
+		      </div>
 
-				<div class="clearfix">
-				  <%= f.label :contact_phone %>
-	        <div class="input">
-	          <%= f.text_field :contact_phone %>
-	        </div>
-	      </div>
-				<div class="actions">
-					<%= f.submit "Create New Client", :class => 'btn success' %>
-	      </div>
-			</fieldset>
-		<% end %>
+					<div class="clearfix">
+					  <%= f.label :contact_phone %>
+		        <div class="input">
+		          <%= f.text_field :contact_phone %>
+		        </div>
+		      </div>
+					<div class="actions">
+						<%= f.submit "Create New Client", :class => 'btn success' %>
+		      </div>
+				</fieldset>
+			<% end %>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
