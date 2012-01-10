@@ -3,5 +3,13 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
+ *= require twitter/bootstrap
  *= require_tree . 
 */
+
+.panel {
+	background: rgba(150,150,150,.1);
+	border:1px solid rgba(150,150,150,.2);
+	border-radius:4px;
+	padding:1em;
+}

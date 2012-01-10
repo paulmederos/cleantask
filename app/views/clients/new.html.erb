@@ -1,12 +1,27 @@
-<%= form_for @client, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+<div class ="page-header">
+	<h1>Create a new Client</h1>
+</div>
+
+<div class="row">
+	<div class="span4">
+		<%= link_to 'Back', :back %>
+		<h2>Default styles</h2>
+	  <p>All forms are given default styles to present them in a readable and scalable way. Styles are provided for text inputs, select lists, textareas, radio buttons and checkboxes, and buttons.</p>
+	</div>
+	<div class="span12">
+		<div class="panel">
+		<%= form_for @client, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
   
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-  <%= f.text_field :billing_address %>
-	<%= f.text_field :billing_address %>
-	<%= f.text_field :billing_zip %>
-	<%= f.text_field :contact_name %>
-	<%= f.text_field :contact_email %>
-	<%= f.text_field :contact_phone %>
-  <%= f.submit "Create" %>
-<% end %>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		  <%= f.text_field :billing_address %>
+			<%= f.text_field :billing_address %>
+			<%= f.text_field :billing_zip %>
+			<%= f.text_field :contact_name %>
+			<%= f.text_field :contact_email %>
+			<%= f.text_field :contact_phone %>
+		  <%= f.submit "Create", :class => 'btn primary' %>
+		<% end %>
+		</div>
+	</div>
+</div>
