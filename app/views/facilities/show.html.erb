@@ -15,6 +15,7 @@
 		</div>
 		<div class="span12">
 			<div class="panel">
+				<%= link_to 'Edit Facility Information', edit_facility_path, :class => 'btn pull-right' %>
 				<h3>Contact Information</h3>
 				<p><b>Facility Name:</b> <%= @facility.name %></p>
 				<p><b>Physical address:</b> <%= "#{@facility.address} | #{@facility.zip}" %></p>

@@ -11,7 +11,7 @@
 		</div>
 		<div class="span6">
 			<div class="panel">
-				<%= link_to 'Add Client', new_client_path, :class => 'btn primary pull-right'%>
+				<%= link_to 'Add Client', new_client_path, :class => 'btn pull-right'%>
 				<h3><%= link_to 'All Clients', clients_path %></h3>	
 				<ul>
 					<% @clients.each do |client| %>
@@ -23,6 +23,7 @@
 		
 		<div class="span6">
 			<div class="panel">
+				<%= link_to 'Add Facility', new_facility_path, :class => 'btn pull-right'%>
 				<h3>All Facilities</h3>
 				<ul>
 				</ul>

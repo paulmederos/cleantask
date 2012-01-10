@@ -32,7 +32,7 @@ class FacilitiesController < ApplicationController
   end
 
   def create
-    puts "hi there"
+    
     @facility = Facility.new(params[:facility])
     
     respond_to do |format|

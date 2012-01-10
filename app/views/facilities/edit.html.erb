@@ -1,0 +1,76 @@
+<section id="facility_new">
+	<div class ="page-header">
+		<h1>Edit <i><%= @facility.name.titleize %></i> Facility</h1>
+	</div>
+
+	<div class="row">
+		<div class="span4">
+			<%= link_to 'Back', :back %>
+			<h2>Editing a Facility</h2>
+		  <p>Facilities are in the care of your hands. We need to make sure
+			they are up to par, and running at peak performance.facility</p>
+		</div>
+		<div class="span12">
+			<div class="panel">
+			<%= form_for @facility, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+	  		<fieldset>
+					<legend>Basic Details</legend>
+					
+					<div class="clearfix">
+						<%= f.label :client_id %>
+		        <div class="input">
+		          <%= f.text_field :client_id, :value => "#{@facility.client.name}", :class => 'disabled', :disabled => 'disabled' %>
+		        </div>
+		      </div>
+					
+					<div class="clearfix">
+					  <%= f.label :name %>
+		        <div class="input">
+		          <%= f.text_field :name %>
+		        </div>
+		      </div>
+
+					<div class="clearfix">
+					  <%= f.label :address %>
+		        <div class="input">
+		          <%= f.text_field :address %>
+		        </div>
+		      </div>
+
+					<div class="clearfix">
+					  <%= f.label :zip %>
+		        <div class="input">
+		          <%= f.text_field :zip, :class => 'mini' %>
+		        </div>
+		      </div>
+
+					<div class="clearfix">
+					  <%= f.label :contact_name %>
+		        <div class="input">
+		          <%= f.text_field :contact_name %>
+		        </div>
+		      </div>
+			
+					<div class="clearfix">
+					  <%= f.label :contact_email %>
+		        <div class="input">
+		          <%= f.text_field :contact_email %>
+		        </div>
+		      </div>
+
+					<div class="clearfix">
+					  <%= f.label :contact_phone %>
+		        <div class="input">
+		          <%= f.text_field :contact_phone %>
+		        </div>
+		      </div>
+					<div class="actions">
+						<%= f.submit "Submit Edits", :class => 'btn success' %>
+						<%= link_to "Nevermind, go back.", :back, :class => 'btn' %>						
+		      </div>
+				</fieldset>
+			<% end %>
+			</div>
+		</div>
+	</div>
+</section>
