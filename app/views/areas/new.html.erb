@@ -1,0 +1,76 @@
+<section id="area_new">
+	<div class ="page-header">
+		<h1>Add a new Area</h1>
+	</div>
+
+	<div class="row">
+		<div class="span4">
+			<%= link_to 'Back', :back %>
+			<h2>Adding an Area</h2>
+		  <p>Areas are subsections of facilities. This will allow you
+			to break up a large building into pieces. You can't eat an elephant whole
+			but you can definitely eat it one bite at a time.</p>
+		</div>
+		<div class="span12">
+			<div class="panel">
+			<%= form_for @area, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+	  		<fieldset>
+					<legend>Area Basics</legend>
+					
+					<div class="clearfix">
+						<%= f.label :facility_id %>
+		        <div class="input">
+		          <%= collection_select(:area, :facility_id, @clients, :id, :name, options ={:prompt => "-Select a client"}, :class =>"areas_select") %>
+		        </div>
+		      </div>
+					
+					<div class="clearfix">
+					  <%= f.label :name %>
+		        <div class="input">
+		          <%= f.text_field :name %>
+		        </div>
+		      </div>
+
+					<div class="clearfix">
+					  <%= f.label :address %>
+		        <div class="input">
+		          <%= f.text_field :address %>
+		        </div>
+		      </div>
+
+					<div class="clearfix">
+					  <%= f.label :zip %>
+		        <div class="input">
+		          <%= f.text_field :zip, :class => 'mini' %>
+		        </div>
+		      </div>
+
+					<div class="clearfix">
+					  <%= f.label :contact_name %>
+		        <div class="input">
+		          <%= f.text_field :contact_name %>
+		        </div>
+		      </div>
+			
+					<div class="clearfix">
+					  <%= f.label :contact_email %>
+		        <div class="input">
+		          <%= f.text_field :contact_email %>
+		        </div>
+		      </div>
+
+					<div class="clearfix">
+					  <%= f.label :contact_phone %>
+		        <div class="input">
+		          <%= f.text_field :contact_phone %>
+		        </div>
+		      </div>
+					<div class="actions">
+						<%= f.submit "Add New Facility", :class => 'btn success' %>
+		      </div>
+				</fieldset>
+			<% end %>
+			</div>
+		</div>
+	</div>
+</section>
