@@ -12,10 +12,24 @@
 				  <%= devise_error_messages! %>
 				</div>
 				
+				<div class="clearfix">
+					<%= f.label :name %>
+					<div class="input">
+			  		<%= f.text_field :name %>
+					</div>
+				</div>
+				
 			  <div class="clearfix">
 					<%= f.label :email %>
 					<div class="input">
 			  		<%= f.email_field :email %>
+					</div>
+				</div>
+				
+				<div class="clearfix">
+					<%= f.label :phone %>
+					<div class="input">
+			  		<%= f.text_field :phone %>
 					</div>
 				</div>
 				
