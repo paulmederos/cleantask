@@ -17,3 +17,6 @@ $ ->
   )
   $(".open-modal").click ->
     domModal.toggle()  
+
+		jQuery ($) ->
+		  $("p.alert, p.notice").addClass('animated fadeInUp')

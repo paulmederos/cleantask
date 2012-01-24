@@ -9,8 +9,8 @@ Cleantask::Application.routes.draw do
      match "/signup" =>  "devise/registrations#new", :as => :signup
      match "/signin" =>  "devise/sessions#new", :as => :signin
      match '/edit-profile', :to => 'registrations#edit', :as => :edit_profile
+     match "/signout" => "sessions#destroy", :as => :signout
   end
-    match "/signout" => "sessions#destroy", :as => :signout
   
   resources :users
   resources :clients
