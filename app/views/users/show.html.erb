@@ -1,0 +1,28 @@
+<section id="show-user-page">
+	<div class="page-header">
+	    <h1>Your Profile</h1>
+	</div>
+	<div class="row">
+		<div class="span8">				
+				<div class="clearfix">
+					<b>Name:</b> <%= @user.name %>
+				</div>
+				
+				<div class="clearfix">
+					<b>Email:</b> <%= @user.email %>
+				</div>
+				
+				<div class="clearfix">
+					<b>Phone:</b> <%= @user.phone %>
+				</div>
+
+			  <div class="actions">
+					<%= link_to "Edit Profile", :edit_profile, :class => 'btn primary' %>
+					or <%= link_to "cancel", :root %>.
+				</div>
+			</div>
+		</div>	
+	</div>
+</section>
+
+

@@ -11,6 +11,10 @@
 	position:relative !important;
 }
 
+.container section {
+	margin-top: 2em;
+}
+
 .panel {
 	background: rgba(150,150,150,.1);
 	border:1px solid rgba(150,150,150,.2);
@@ -20,3 +24,13 @@
 }
 
 h1 > a, h2 > a, h3 > a, h4 > a {color:inherit;}
+
+p.notice, p.alert {
+	width: 40%;
+	margin: 1em auto;
+	display: block;
+	text-align: center;
+	padding:.5em;
+}
+p.alert {background: rgba(200,50,50,.3); border:1px solid rgba(200,50,50,.8);}
+p.notice {background: rgba(250,255,170,.3); border:1px solid rgba(240,230,210,1);}

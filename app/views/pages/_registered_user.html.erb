@@ -1,0 +1,33 @@
+<section id="dashboard">
+	<div class="page-header">
+	    <h1>Dashboard</h1>
+	</div>
+	<div class="row">
+		<div class="span4">
+			<h2>We are now home!</h2>
+			<p>This is where the entire list of clients will
+				go for a particular user. They will be able 
+				to see quick glances of statuses.</p>
+		</div>
+		<div class="span6">
+			<div class="panel">
+				<%= link_to 'Add Client', new_client_path, :class => 'btn pull-right'%>
+				<h3><%= link_to 'All Clients', clients_path %></h3>	
+				<ul>
+					<% @clients.each do |client| %>
+						<li><%= link_to "#{client.name}", client %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	
+		<div class="span6">
+			<div class="panel">
+				<%= link_to 'Add Facility', new_facility_path, :class => 'btn pull-right'%>
+				<h3>All Facilities</h3>
+				<ul>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
