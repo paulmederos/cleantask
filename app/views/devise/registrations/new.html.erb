@@ -1,0 +1,43 @@
+<section id="signup-page">
+	<div class="page-header">
+	    <h1>Create an Account</h1>
+	</div>
+	<div class="row">
+		<div class="span8">
+			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+				<div class="clearfix">
+				  <%= devise_error_messages! %>
+				</div>
+				
+			  <div class="clearfix">
+					<%= f.label :email %>
+					<div class="input">
+			  		<%= f.email_field :email %>
+					</div>
+				</div>
+				
+				<div class="clearfix">
+					<%= f.label :password %>
+					<div class="input">
+			  		<%= f.password_field :password %>
+					</div>
+				</div>
+				
+				<div class="clearfix">
+					<%= f.label :password_confirmation %>
+					<div class="input">
+			  		<%= f.password_field :password_confirmation %>
+					</div>
+				</div>
+
+
+			  <div class="actions">
+					<%= f.submit "Create an account!", :class => 'btn success' %>
+					or <%= link_to "sign in", new_user_session_path %>.
+				</div>
+			<% end %>	
+			</div>
+		</div>	
+	</div>
+</section>
+
