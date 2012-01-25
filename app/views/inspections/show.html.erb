@@ -1,0 +1,12 @@
+<section id="inspection-show">
+	<p>
+	  <strong>Name:</strong>
+	  <%= @inspection.name %>
+	</p>
+
+	<p>
+	  <%= link_to "Edit", edit_inspection_path(@inspection) %> |
+	  <%= link_to "Destroy", @inspection, :confirm => 'Are you sure?', :method => :delete %> |
+	  <%= link_to "View All", inspections_path %>
+	</p>
+</section>

@@ -45,3 +45,4 @@ gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'fog'
+gem "mocha", :group => :test

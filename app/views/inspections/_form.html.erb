@@ -1,0 +1,14 @@
+<%= form_for @inspection do |f| %>
+  <%= f.error_messages %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+	<%= f.fields_for :questions do |builder| %>
+		<p>
+			<%= builder.label :content, "Question" %><br />
+			<%= builder.text_area :content, :rows => 3 %>
+		</p>
+	<% end %>
+  <div class="actions"><%= f.submit %></div>
+<% end %>

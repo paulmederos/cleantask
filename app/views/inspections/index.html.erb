@@ -1,0 +1,16 @@
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for inspection in @inspections %>
+    <tr>
+      <td><%= inspection.name %></td>
+      <td><%= link_to "Show", inspection %></td>
+      <td><%= link_to "Edit", edit_inspection_path(inspection) %></td>
+      <td><%= link_to "Destroy", inspection, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Inspection", new_inspection_path %></p>
