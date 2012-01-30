@@ -3,10 +3,17 @@
 	  <strong>Name:</strong>
 	  <%= @inspection.name %>
 	</p>
+	
+	<ol>
+		<% for question in @inspection.questions %>
+			<li><%=h question.content %><li>
+		<% end %>		
+	</ol>	
 
 	<p>
 	  <%= link_to "Edit", edit_inspection_path(@inspection) %> |
-	  <%= link_to "Destroy", @inspection, :confirm => 'Are you sure?', :method => :delete %> |
+	  <%= link_to "Destroy", @inspection, :confirm => 'Are you sure?', 
+								 :method => :delete %> |
 	  <%= link_to "View All", inspections_path %>
 	</p>
 </section>

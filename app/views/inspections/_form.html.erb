@@ -4,11 +4,11 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-	<%= f.fields_for :questions do |builder| %>
-		<p>
+	<% f.fields_for :questions do |builder| %>
+		<div class="field">
 			<%= builder.label :content, "Question" %><br />
 			<%= builder.text_area :content, :rows => 3 %>
-		</p>
+		</div>
 	<% end %>
-  <div class="actions"><%= f.submit %></div>
+  <div class="actions"><%= f.submit "Submit", :class => 'btn' %></div>
 <% end %>
