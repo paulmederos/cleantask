@@ -10,7 +10,6 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
-    @facilites = @client.facilities
     
     respond_to do |format|
       format.html # show.html.erb

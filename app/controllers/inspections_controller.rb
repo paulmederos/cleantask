@@ -9,13 +9,14 @@ class InspectionsController < ApplicationController
 
   def new
     @inspection = Inspection.new
-    3.times { @inspection.questions.build }
+    @facilities = Facility.all
+    @question = @inspection.questions.build
   end
 
   def create
     @inspection = Inspection.new(params[:inspection])
     if @inspection.save
-      redirect_to @inspection, :notice => "Successfully created inspection."
+      redirect_to @inspection, :notice => "Successfully submitted the inspection."
     else
       render :new
     end
@@ -36,7 +37,8 @@ class InspectionsController < ApplicationController
 
   def destroy
     @inspection = Inspection.find(params[:id])
+    @facility = @inspection.facility
     @inspection.destroy
-    redirect_to inspections_url, :notice => "Successfully destroyed inspection."
+    redirect_to @facility, :notice => "Successfully destroyed inspection."
   end
 end

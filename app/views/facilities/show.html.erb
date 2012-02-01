@@ -1,11 +1,11 @@
-<section id="facility_show">
+<section id="facility-show">
 	<div class ="page-header">
 		<h1><%= @facility.client.name unless @facility.client == nil %> : <%= @facility.name %></h1>
 	</div>
 
 	<div class="row">
 		<div class="span4">
-			<%= link_to 'Back', :back %>
+			<%= link_to 'Back', @facility.client %>
 			<h2>ID: <%= @facility.id %></h2>
 			<h6>Created <%= @facility.created_at.strftime("%m/%d/%Y | %I:%M%p") %>.</h6>
 			<p>This is where a description of the client would go. Maybe
@@ -15,20 +15,33 @@
 		</div>
 		<div class="span12">
 			<div class="panel">
-				<%= link_to 'Edit Facility Information', edit_facility_path, :class => 'btn pull-right' %>
 				<h3>Contact Information</h3>
-				<p><b>Facility Name:</b> <%= @facility.name %></p>
-				<p><b>Physical address:</b> <%= "#{@facility.address} | #{@facility.zip}" %></p>
-				<p><b>Local Contact:</b> <%= @facility.contact_name %></p>
-				<p><b>Local Contact Email:</b> <%= link_to @facility.contact_email,
-				 														 "mailto:#{@facility.contact_email}"%></p>
-				<p><b>Local Contact Phone:</b> <%= @facility.contact_phone %></p>
+				<div class="details">
+					<%= link_to 'Edit Facility Information', edit_facility_path, :class => 'btn pull-right' %>
+					<p><b>Facility Name:</b> <%= @facility.name %></p>
+					<p><b>Physical address:</b> <%= "#{@facility.address} | #{@facility.zip}" %></p>
+					<p><b>Local Contact:</b> <%= @facility.contact_name %></p>
+					<p><b>Local Contact Email:</b> <%= link_to @facility.contact_email,
+					 														 "mailto:#{@facility.contact_email}"%></p>
+					<p><b>Local Contact Phone:</b> <%= @facility.contact_phone %></p>
+				</div>
 			</div>
 		
-				<div class="panel">
-					<h3>Cleaning Crew</h3>
-				
+			<div class="panel">
+				<h3>Recent Inspections</h3>
+				<div class="details">
+					<%= link_to 'New Inspection', new_inspection_path, :class => 'btn primary pull-right' %>
+					<% if @facility.inspections.any? %>
+						<ul>
+							<% @facility.inspections.each do |inspection| %>
+								<li><%= link_to "#{inspection.name}", inspection %></li>
+							<% end %>
+						</ul>
+					<% else %>	
+						<p>There have been no recent inspections.</p>
+					<% end %>
 				</div>
+			</div>
 		</div>
 	</div>
 </section>

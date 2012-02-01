@@ -25,11 +25,11 @@
 			</div>
 		
 				<div class="panel">
-					<%= link_to 'Add Facility', new_facility_path, :class => 'btn primary pull-right' %>
 					<h3>Facilities Served</h3>
-						<% @client.facilities.each do |facility| %>
-							<li><%= link_to "#{facility.name}", facility %></li>
-						<% end %>
+					<% @client.facilities.each do |facility| %>
+						<li><%= link_to "#{facility.name}", facility %></li>
+					<% end %>
+					<%= link_to 'Add Facility', new_facility_path, :class => 'btn' %>
 				</div>
 		</div>
 	</div>

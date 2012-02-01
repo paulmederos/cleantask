@@ -1,6 +1,12 @@
 <section id="inspection-new">
-	
-	<%= render "form" %>
-
-	<p><%= link_to "Back to List", inspections_path %></p>
+	<div class="row">
+		<div class="eight columns">
+			<%= render "form" %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="eight columns">
+			<%= link_to "Back to Facility", :back %>
+		</div>
+	</div>
 </section>
