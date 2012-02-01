@@ -15,21 +15,31 @@
 		</div>
 		<div class="span12">
 			<div class="panel">
-				<h3>Contact Information</h3>
-				<p><b>Name:</b> <%= @client.name %></p>
-				<p><b>Billing address:</b> <%= "#{@client.billing_address} | #{@client.billing_zip}" %></p>
-				<p><b>Contact:</b> <%= @client.contact_name %></p>
-				<p><b>Contact email:</b> <%= link_to @client.contact_email,
-				 														 "mailto:#{@client.contact_email}"%></p>
-				<p><b>Contact phone:</b> <%= @client.contact_phone %></p>
+				<h3>Client Contact Information</h3>
+				<div class="details">
+					<p><b>Name:</b> <%= @client.name %></p>
+					<p><b>Billing address:</b> <%= "#{@client.billing_address} | #{@client.billing_zip}" %></p>
+					<p><b>Contact:</b> <%= @client.contact_name %></p>
+					<p><b>Contact email:</b> <%= link_to @client.contact_email,
+					 														 "mailto:#{@client.contact_email}"%></p>
+					<p><b>Contact phone:</b> <%= @client.contact_phone %></p>
+				</div>
 			</div>
 		
 				<div class="panel">
 					<h3>Facilities Served</h3>
-					<% @client.facilities.each do |facility| %>
-						<li><%= link_to "#{facility.name}", facility %></li>
-					<% end %>
-					<%= link_to 'Add Facility', new_facility_path, :class => 'btn' %>
+					<div class="details">
+						<%= link_to 'Add Facility', new_facility_path, :class => 'btn pull-right' %>
+						<% if @client.facilities %>
+							<ul>
+								<% @client.facilities.each do |facility| %>
+									<li><%= link_to "#{facility.name}", facility %></li>
+								<% end %>
+							</ul>
+						<% else %>	
+							<p>There are currently no facilities associated with <%= @facility.name %>.</p>
+						<% end %>	
+					</div>
 				</div>
 		</div>
 	</div>

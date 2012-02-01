@@ -14,24 +14,28 @@
 				<h3>
 					<%= link_to 'All Clients', clients_path %>
 				</h3>	
-				<%= link_to 'Add Client', new_client_path, :class => 'pull-right'%>
-				<ul>
-					<% @clients.each do |client| %>
-						<li><%= link_to "#{client.name}", client %></li>
-					<% end %>
-				</ul>
+				<div class="details">
+					<%= link_to 'Add Client', new_client_path, :class => 'btn pull-right'%>
+					<ul>
+						<% @clients.each do |client| %>
+							<li><%= link_to "#{client.name}", client %></li>
+						<% end %>
+					</ul>
+				</div>
 			</div>
 		</div>
 	
 		<div class="span6">
 			<div class="panel">
 				<h3>All Facilities</h3>
-				<%= link_to 'Add Facility', new_facility_path, :class => 'pull-right' %>
-				<ul>
-					<% @facilities.each do |facility| %>
-						<li><%= link_to "#{facility.name}", facility %></li>
-					<% end %>
-				</ul>
+				<div class="details">
+					<%= link_to 'Add Facility', new_facility_path, :class => 'btn pull-right' %>
+					<ul>
+						<% @facilities.each do |facility| %>
+							<li><%= link_to "#{facility.name}", facility %></li>
+						<% end %>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
