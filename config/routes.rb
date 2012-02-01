@@ -1,4 +1,6 @@
 Cleantask::Application.routes.draw do
+  resources :answers
+
   root :to => "pages#home"
   
   # Devise for User authentication + session management

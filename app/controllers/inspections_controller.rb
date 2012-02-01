@@ -8,9 +8,8 @@ class InspectionsController < ApplicationController
   end
 
   def new
-    @inspection = Inspection.new
     @facilities = Facility.all
-    @question = @inspection.questions.build
+    @inspection = Inspection.new
   end
 
   def create

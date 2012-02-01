@@ -14,11 +14,11 @@
 		</div>
 	</div>
 	
-	<%= fields_for (Question.new) do |q| %>
+	<%= fields_for :questions do |q| %>
 		<div class="clearfix">
-	    <%= q.label :content, "What the thing left on?" %>
+	    <%= q.label :answer, :content %>
 			<div class="input">
-	    	<%= q.check_box :content %>
+	    	<%= q.check_box :answer %>
 			</div>
 		</div>
 	<% end %>	
