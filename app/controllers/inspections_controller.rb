@@ -10,12 +10,13 @@ class InspectionsController < ApplicationController
   def new
     @facilities = Facility.all
     @inspection = Inspection.new
+    @question = @inspection.questions.build
   end
 
   def create
     @inspection = Inspection.new(params[:inspection])
     if @inspection.save
-      redirect_to @inspection, :notice => "Successfully submitted the inspection."
+      redirect_to @inspection.facility, :notice => "Inspection has been successfully submitted!"
     else
       render :new
     end

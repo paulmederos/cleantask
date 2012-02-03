@@ -14,12 +14,14 @@
 		</div>
 	</div>
 	
-	<%= fields_for :questions do |q| %>
+	<%= f.fields_for :questions do |q| %>
 		<div class="clearfix">
-	    <%= q.label :answer, :content %>
-			<div class="input">
-	    	<%= q.check_box :answer %>
-			</div>
+			<%= q.fields_for :answer do |a| %>
+		    <%= q.label :content, :content %>
+				<div class="input">
+		    	<%= a.check_box :content %>
+				</div>
+			<% end %>
 		</div>
 	<% end %>	
 	
