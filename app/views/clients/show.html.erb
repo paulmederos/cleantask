@@ -37,7 +37,23 @@
 								<% end %>
 							</ul>
 						<% else %>	
-							<p>There are currently no facilities associated with <%= @facility.name %>.</p>
+							<p>There are currently no facilities associated with <%= @client.name %>.</p>
+						<% end %>	
+					</div>
+				</div>
+				
+				<div class="panel">
+					<h3>Open Notices</h3>
+					<div class="details">
+						<%= link_to 'Open a New Notice', new_notice_path, :class => 'btn pull-right' %>
+						<% if @notices %>
+							<ul>
+								<% @notices do |notice| %>
+									<li><%= link_to "#{notice.summary}", notice %></li>
+								<% end %>
+							</ul>
+						<% else %>	
+							<p>There are currently no open notices associated with <%= @facility.name %>. <%= link_to new_notice_path, "Open a new notice" %>?</p>
 						<% end %>	
 					</div>
 				</div>

@@ -5,6 +5,8 @@ class NoticesController < ApplicationController
 
   def show
     @notice = Notice.find(params[:id])
+    @facility = Facility.find_by_id(@notice.facility_id)
+    @client = Client.find_by_id(@facility.client_id)
   end
 
   def new

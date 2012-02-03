@@ -9,34 +9,51 @@
 				go for a particular user. They will be able 
 				to see quick glances of statuses.</p>
 		</div>
-		<div class="span6">
-			<div class="panel">
-				<h3>
-					<%= link_to 'All Clients', clients_path %>
-				</h3>	
-				<div class="details">
-					<%= link_to 'Add Client', new_client_path, :class => 'btn pull-right'%>
-					<ul>
-						<% @clients.each do |client| %>
-							<li><%= link_to "#{client.name}", client %></li>
-						<% end %>
-					</ul>
+		<div class="span12">
+			<div clas="row">
+				<div class="span12 panel" id="dashboard-all-notices">
+					<h3>All <%= link_to "Open Notices", notices_path %> from All Clients</h3>	
+					<div class="details">
+						<ul>
+							<% @notices.each do |notice| %>
+								<li><%= link_to "#{notice.summary}", notice %></li>
+							<% end %>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
+			<div class="row">
+				<div class="span6">
+					<div class="panel">
+						<h3>
+							<%= link_to 'All Clients', clients_path %>
+						</h3>	
+						<div class="details">
+							<%= link_to 'Add Client', new_client_path, :class => 'btn pull-right'%>
+							<ul>
+								<% @clients.each do |client| %>
+									<li><%= link_to "#{client.name}", client %></li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+				</div>
 	
-		<div class="span6">
-			<div class="panel">
-				<h3>All Facilities</h3>
-				<div class="details">
-					<%= link_to 'Add Facility', new_facility_path, :class => 'btn pull-right' %>
-					<ul>
-						<% @facilities.each do |facility| %>
-							<li><%= link_to "#{facility.name}", facility %></li>
-						<% end %>
-					</ul>
+				<div class="span6">
+					<div class="panel">
+						<h3>All Facilities</h3>
+						<div class="details">
+							<%= link_to 'Add Facility', new_facility_path, :class => 'btn pull-right' %>
+							<ul>
+								<% @facilities.each do |facility| %>
+									<li><%= link_to "#{facility.name}", facility %></li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </section>
