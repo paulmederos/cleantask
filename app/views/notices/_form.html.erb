@@ -1,0 +1,41 @@
+
+
+<%= form_for @notice do |f| %>
+  <%= f.error_messages %>
+	<div class="clearfix">
+		<%= f.label :facility_id %>
+    <div class="input">
+      <%= collection_select(:notice, :facility_id, @facilities, :id, :name, options = {:prompt => "Select a facility"}, :class =>"clients_select") %>
+		</div>
+   </div>
+
+		<div class="clearfix">
+	    <%= f.label :notice_type, "Type of notice" %>
+			<div class="input">
+	    	<%= f.select(:notice_type, Notice::NOTICE_TYPE) %>
+			</div>
+	  </div>
+
+		<div class="clearfix">
+		  <%= f.label :summary %>
+			<div class="input">
+			  	<%= f.text_field :summary %>
+			</div>
+		</div>
+		
+  	<div class="clearfix">
+    	<%= f.label :detail, "Please elaborate on the details, if needed." %>
+			<div class="input">
+    		<%= f.text_area :detail %>
+			</div>
+  	</div>
+
+  <div class="clearfix">
+    <%= f.label :priority %>
+		<div class="input">
+    	<%= f.select(:priority, Notice::PRIORITY_LEVEL) %>
+		</div>
+  </div>
+
+  <div class="actions"><%= f.submit %></div>
+<% end %>

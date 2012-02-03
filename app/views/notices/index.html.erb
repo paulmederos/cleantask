@@ -1,0 +1,27 @@
+<% title "Notices" %>
+
+<table>
+  <tr>
+    <th>Summary</th>
+    <th>Detail</th>
+    <th>Facility</th>
+    <th>Type</th>
+    <th>Status</th>
+    <th>Priority</th>
+  </tr>
+  <% for notice in @notices %>
+    <tr>
+      <td><%= notice.summary %></td>
+      <td><%= notice.detail %></td>
+      <td><%= notice.facility_id %></td>
+      <td><%= notice.notice_type %></td>
+      <td><%= notice.status %></td>
+      <td><%= notice.priority %></td>
+      <td><%= link_to "Show", notice %></td>
+      <td><%= link_to "Edit", edit_notice_path(notice) %></td>
+      <td><%= link_to "Destroy", notice, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Notice", new_notice_path %></p>

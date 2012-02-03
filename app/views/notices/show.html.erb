@@ -1,0 +1,32 @@
+<% title "Notice" %>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @notice.summary %>
+</p>
+<p>
+  <strong>Detail:</strong>
+  <%= @notice.detail %>
+</p>
+<p>
+  <strong>Facility:</strong>
+  <%= @notice.facility.name %>
+</p>
+<p>
+  <strong>Type:</strong>
+  <%= @notice.notice_type %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%= @notice.status %>
+</p>
+<p>
+  <strong>Priority:</strong>
+  <%= @notice.priority %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_notice_path(@notice) %> |
+  <%= link_to "Destroy", @notice, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", notices_path %>
+</p>
