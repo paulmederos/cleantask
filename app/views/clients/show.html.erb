@@ -4,7 +4,7 @@
 	</div>
 
 	<div class="row">
-		<div class="span3">
+		<div class="span4">
 			<%= link_to 'Back to Dashboard', :root %>
 			<h2>ID: <%= @client.id %></h2>
 			<h6>Created <%= @client.created_at.strftime("%m/%d/%Y | %I:%M%p") %>.</h6>
@@ -13,7 +13,39 @@
 			<%= button_to 'Delete Client', client_path, :method => :delete, 
 										:confirm => "Are you sure you want to remove this client? This is irreversible!", :class => 'btn danger' %>
 		</div>
-		<div class="span9">
+		<div class="span8">		
+			<div class="panel">
+				<h3>Open Notices</h3>
+				<div class="details">
+					<%= link_to 'Open a New Notice', new_notice_path, :class => 'btn pull-right' %>
+					<% if @notices %>
+						<ul>
+							<% @notices.each do |notice| %>
+								<li><%= link_to "#{notice.summary}", notice %></li>
+							<% end %>
+						</ul>
+					<% else %>	
+						<p>There are currently no open notices associated with <%= @facility.name %>. <%= link_to new_notice_path, "Open a new notice" %>?</p>
+					<% end %>	
+				</div>
+			</div>
+		
+			<div class="panel">
+				<h3>Facilities Served</h3>
+				<div class="details">
+					<%= link_to 'Add Facility', new_facility_path, :class => 'btn pull-right' %>
+					<% if @client.facilities %>
+						<ul>
+							<% @client.facilities.each do |facility| %>
+								<li><%= link_to "#{facility.name}", facility %></li>
+							<% end %>
+						</ul>
+					<% else %>	
+						<p>There are currently no facilities associated with <%= @client.name %>.</p>
+					<% end %>	
+				</div>
+			</div>
+			
 			<div class="panel">
 				<h3>Client Contact Information</h3>
 				<div class="details">
@@ -25,38 +57,7 @@
 					<p><b>Contact phone:</b> <%= @client.contact_phone %></p>
 				</div>
 			</div>
-		
-				<div class="panel">
-					<h3>Facilities Served</h3>
-					<div class="details">
-						<%= link_to 'Add Facility', new_facility_path, :class => 'btn pull-right' %>
-						<% if @client.facilities %>
-							<ul>
-								<% @client.facilities.each do |facility| %>
-									<li><%= link_to "#{facility.name}", facility %></li>
-								<% end %>
-							</ul>
-						<% else %>	
-							<p>There are currently no facilities associated with <%= @client.name %>.</p>
-						<% end %>	
-					</div>
-				</div>
-				
-				<div class="panel">
-					<h3>Open Notices</h3>
-					<div class="details">
-						<%= link_to 'Open a New Notice', new_notice_path, :class => 'btn pull-right' %>
-						<% if @notices %>
-							<ul>
-								<% @notices.each do |notice| %>
-									<li><%= link_to "#{notice.summary}", notice %></li>
-								<% end %>
-							</ul>
-						<% else %>	
-							<p>There are currently no open notices associated with <%= @facility.name %>. <%= link_to new_notice_path, "Open a new notice" %>?</p>
-						<% end %>	
-					</div>
-				</div>
+			
 		</div>
 	</div>
 </section>

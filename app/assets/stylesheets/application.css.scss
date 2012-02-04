@@ -29,7 +29,6 @@ body {
 .panel h3 {
 	position:relative;
 	background: -webkit-linear-gradient(#F6F6F6,#E2E2E2);
-	height: 36px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-bottom: 1px solid #A7A7A7;
@@ -37,7 +36,7 @@ body {
 	box-shadow: #fff 0 1px 0 inset, #ededed 0 -1px inset, #e2e2e2 0 1px 0;
 	border-bottom: 1px solid #A7A7A7;
 	color: #2B2D30;
-	padding:0 0 0 12px;
+	padding: .4em 0 .4em .8em;
 }
 
 .panel .details {
@@ -73,7 +72,24 @@ p.notice {background: rgba(250,255,170,.3); border:1px solid rgba(240,230,210,1)
 
 /* Notices */
 .notice-response {
-	border:1px solid rgba(0,0,0,.5);
+	border:1px solid rgba(200, 210, 210,.4);
 	padding:.6em;
 	font-size:1.3em;
+	border-radius:6px;
+	background:rgba(252, 248, 227,.4);
+	margin-bottom:1em;
+}
+
+.notice-specs {
+	margin-top:1em; padding-top:1em; border-top:1px solid #cbcbcb;
+}
+
+section#notice .panel h3 {
+	line-height:1em;
+	padding:.8em 0 .8em 2.1%;
+}
+
+section#notice .panel h3 i {
+	font-weight:normal;
+	font-size:.6em;
 }

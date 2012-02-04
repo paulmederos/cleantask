@@ -7,29 +7,35 @@
 		<div class="span4">
 			<h2>ID: <%= @facility.id %></h2>
 			<h6>Created <%= @facility.created_at.strftime("%m/%d/%Y | %I:%M%p") %>.</h6>
-			<p>This is where a description of the client would go. Maybe
-				a list of all Client Users that have access to the system?</p>
-			<%= button_to 'Delete Facility', facility_path, :method => :delete, 
-										:confirm => "Are you sure you want to remove this facility? This is irreversible!", :class => 'btn btn-danger' %>
+			<p><b>Facility Name:</b><br /><%= @facility.name %></p>
+			<p><b>Physical address:</b><br /><%= "#{@facility.address} #{@facility.zip}" %></p>
+			<p><b>Local Contact:</b><br /><%= @facility.contact_name %></p>
+			<p><b>Local Contact Email:</b><br /><%= link_to @facility.contact_email, "mailto:#{@facility.contact_email}"%></p>
+			<p><b>Local Contact Phone:</b><br /><%= @facility.contact_phone %></p>
+			<%= link_to 'Edit Facility Information', edit_facility_path, :class => 'btn' %>
 		</div>
-		<div class="span12">
+		<div class="span8">
+			
 			<div class="panel">
-				<h3>Facility Contact Information</h3>
+				<h3>Open Notices</h3>
 				<div class="details">
-					<%= link_to 'Edit Facility Information', edit_facility_path, :class => 'btn pull-right' %>
-					<p><b>Facility Name:</b> <%= @facility.name %></p>
-					<p><b>Physical address:</b> <%= "#{@facility.address} | #{@facility.zip}" %></p>
-					<p><b>Local Contact:</b> <%= @facility.contact_name %></p>
-					<p><b>Local Contact Email:</b> <%= link_to @facility.contact_email,
-					 														 "mailto:#{@facility.contact_email}"%></p>
-					<p><b>Local Contact Phone:</b> <%= @facility.contact_phone %></p>
+					<%= link_to 'Open a New Notice', new_notice_path, :class => 'btn pull-right' %>
+					<% if @notices %>
+						<ul>
+							<% @notices.each do |notice| %>
+								<li><%= link_to "#{notice.summary}", notice %></li>
+							<% end %>
+						</ul>
+					<% else %>	
+						<p>There are currently no open notices associated with <%= @facility.name %>.</p>
+					<% end %>	
 				</div>
 			</div>
 		
 			<div class="panel">
 				<h3>Recent Inspections</h3>
 				<div class="details">
-					<%= link_to 'New Inspection', new_inspection_path, :class => 'btn btn-primary pull-right' %>
+					<%= link_to 'New Inspection', new_inspection_path, :class => 'btn pull-right' %>
 					<% if @facility.inspections.any? %>
 						<ul>
 							<% @facility.inspections.each do |inspection| %>

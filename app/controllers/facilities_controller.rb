@@ -10,6 +10,7 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+    @notices = Notice.find_all_by_facility_id_and_status(@facility.id, "Open")
     
     respond_to do |format|
       format.html # show.html.erb

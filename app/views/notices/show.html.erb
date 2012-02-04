@@ -1,32 +1,36 @@
 <section id="notice">
 	<div class="page-header">
-	    <h1>View Notice</h1>
+	    <h2><%= link_to @notice.facility.client.name, @notice.facility.client %> : <%= link_to @notice.facility.name, @notice.facility %> : <%= link_to @notice.notice_type.humanize, @notice %></h2>
 	</div>
-	<div class="row">
-		<div class="span4">
-			<h3><%= @notice.notice_type.humanize %></h3>
-			<p>by <%= link_to @notice.user.name, @notice.user %></p>
-			<p>in <%= link_to @notice.facility.name, @notice.facility %></p>
-			<% if @notice.user == current_user %>
-				<div style="margin-top:1em; padding-top:1em; border-top:1px solid #cbcbcb; ">
-					<p>
-					  <%= link_to "Edit", edit_notice_path(@notice) %> |
-					  <%= link_to "Destroy", @notice, :confirm => 'Are you sure?', :method => :delete %> |
-					  <%= link_to "View All Notices", notices_path %>
-					</p>
-				</div>
-			<% end %>
-		</div>
-	
+	<div class="row">	
 		<div class="span12">
 			<div class="panel">
-			  <h3><%= @notice.summary %></h3>
+			  <h3>
+					<%= @notice.summary %>	
+				</h3>
 			
 				<div class="details">
-				  <p><strong>Status:</strong> <%= @notice.status %></p>
-				  <p><strong>Priority:</strong> <%= @notice.priority %></p>
 					<div class="notice-response">
 						<%= @notice.detail %>
+					</div>
+					
+				  <p><strong>Status:</strong> <%= @notice.status %></p>
+				  <p><strong>Priority:</strong> <%= @notice.priority %></p>
+					
+					
+					<div class="notice-specs">
+						<p>
+							<b><%= @notice.notice_type.humanize %></b> posted by <%= link_to @notice.user.name, @notice.user %>			
+							for <%= link_to @notice.facility.name, @notice.facility %> <%= time_ago_in_words(@notice.created_at) %> ago.
+							
+							<% if @notice.user == current_user %>
+								<div class="notice-controls">
+									<%= link_to "Edit", edit_notice_path(@notice) %> |
+								  <%= link_to "Destroy", @notice, :confirm => 'Are you sure?', :method => :delete %> |
+								  <%= link_to "View All Notices", notices_path %>
+								</div>
+							<% end %>	
+						</p>
 					</div>
 			</div>	
 		</div>	
