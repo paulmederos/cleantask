@@ -4,8 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require twitter/bootstrap
-
- *= require_tree . 
+ *= require_tree .
 */
 
 body {
@@ -16,8 +15,8 @@ body {
 	position:relative !important;
 }
 
-.container section {
-	margin-top: 2em;
+.container > section {
+	margin-top: 60px;
 }
 
 .panel {
@@ -57,5 +56,24 @@ p.notice, p.alert {
 	text-align: center;
 	padding:.5em;
 }
+
 p.alert {background: rgba(200,50,50,.3); border:1px solid rgba(200,50,50,.8);}
 p.notice {background: rgba(250,255,170,.3); border:1px solid rgba(240,230,210,1);}
+
+/* Unregistered home page aka Tumblr Sign In */
+.home-signin {
+	margin: 0 auto;
+	width: 400px;
+	top: 100px;
+	position: relative;
+	border: 1px solid #EBEBEB;
+	padding: 4em;
+	background: yellow;
+}
+
+/* Notices */
+.notice-response {
+	border:1px solid rgba(0,0,0,.5);
+	padding:.6em;
+	font-size:1.3em;
+}

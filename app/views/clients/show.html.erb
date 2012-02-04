@@ -4,7 +4,7 @@
 	</div>
 
 	<div class="row">
-		<div class="span4">
+		<div class="span3">
 			<%= link_to 'Back to Dashboard', :root %>
 			<h2>ID: <%= @client.id %></h2>
 			<h6>Created <%= @client.created_at.strftime("%m/%d/%Y | %I:%M%p") %>.</h6>
@@ -13,7 +13,7 @@
 			<%= button_to 'Delete Client', client_path, :method => :delete, 
 										:confirm => "Are you sure you want to remove this client? This is irreversible!", :class => 'btn danger' %>
 		</div>
-		<div class="span12">
+		<div class="span9">
 			<div class="panel">
 				<h3>Client Contact Information</h3>
 				<div class="details">
@@ -48,7 +48,7 @@
 						<%= link_to 'Open a New Notice', new_notice_path, :class => 'btn pull-right' %>
 						<% if @notices %>
 							<ul>
-								<% @notices do |notice| %>
+								<% @notices.each do |notice| %>
 									<li><%= link_to "#{notice.summary}", notice %></li>
 								<% end %>
 							</ul>

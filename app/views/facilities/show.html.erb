@@ -10,7 +10,7 @@
 			<p>This is where a description of the client would go. Maybe
 				a list of all Client Users that have access to the system?</p>
 			<%= button_to 'Delete Facility', facility_path, :method => :delete, 
-										:confirm => "Are you sure you want to remove this facility? This is irreversible!", :class => 'btn danger' %>
+										:confirm => "Are you sure you want to remove this facility? This is irreversible!", :class => 'btn btn-danger' %>
 		</div>
 		<div class="span12">
 			<div class="panel">
@@ -29,7 +29,7 @@
 			<div class="panel">
 				<h3>Recent Inspections</h3>
 				<div class="details">
-					<%= link_to 'New Inspection', new_inspection_path, :class => 'btn primary pull-right' %>
+					<%= link_to 'New Inspection', new_inspection_path, :class => 'btn btn-primary pull-right' %>
 					<% if @facility.inspections.any? %>
 						<ul>
 							<% @facility.inspections.each do |inspection| %>

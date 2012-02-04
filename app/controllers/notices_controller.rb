@@ -16,6 +16,7 @@ class NoticesController < ApplicationController
 
   def create
     @notice = Notice.new(params[:notice])
+    @notice.user_id = current_user.id
     if @notice.save
       redirect_to @notice, :notice => "Successfully created this #{@notice.notice_type}"
     else
@@ -25,6 +26,7 @@ class NoticesController < ApplicationController
 
   def edit
     @notice = Notice.find(params[:id])
+    @facilities = Facility.all
   end
 
   def update

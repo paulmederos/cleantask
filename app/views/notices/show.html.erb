@@ -1,32 +1,34 @@
-<% title "Notice" %>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @notice.summary %>
-</p>
-<p>
-  <strong>Detail:</strong>
-  <%= @notice.detail %>
-</p>
-<p>
-  <strong>Facility:</strong>
-  <%= @notice.facility.name %>
-</p>
-<p>
-  <strong>Type:</strong>
-  <%= @notice.notice_type %>
-</p>
-<p>
-  <strong>Status:</strong>
-  <%= @notice.status %>
-</p>
-<p>
-  <strong>Priority:</strong>
-  <%= @notice.priority %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_notice_path(@notice) %> |
-  <%= link_to "Destroy", @notice, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", notices_path %>
-</p>
+<section id="notice">
+	<div class="page-header">
+	    <h1>View Notice</h1>
+	</div>
+	<div class="row">
+		<div class="span4">
+			<h3><%= @notice.notice_type.humanize %></h3>
+			<p>by <%= link_to @notice.user.name, @notice.user %></p>
+			<p>in <%= link_to @notice.facility.name, @notice.facility %></p>
+			<% if @notice.user == current_user %>
+				<div style="margin-top:1em; padding-top:1em; border-top:1px solid #cbcbcb; ">
+					<p>
+					  <%= link_to "Edit", edit_notice_path(@notice) %> |
+					  <%= link_to "Destroy", @notice, :confirm => 'Are you sure?', :method => :delete %> |
+					  <%= link_to "View All Notices", notices_path %>
+					</p>
+				</div>
+			<% end %>
+		</div>
+	
+		<div class="span12">
+			<div class="panel">
+			  <h3><%= @notice.summary %></h3>
+			
+				<div class="details">
+				  <p><strong>Status:</strong> <%= @notice.status %></p>
+				  <p><strong>Priority:</strong> <%= @notice.priority %></p>
+					<div class="notice-response">
+						<%= @notice.detail %>
+					</div>
+			</div>	
+		</div>	
+	</div>
+</section>

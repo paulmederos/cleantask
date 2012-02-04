@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'layouts/navigation' %>
-	<div class="container">
+	<%= render 'layouts/navigation' unless !user_signed_in? %>
+	<div class="container main">
 		
 		<%= render 'layouts/alerts' %>
 		

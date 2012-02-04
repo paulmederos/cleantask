@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   
   has_many :client_assocations
   has_many :clients, :through => :client_associations
+  has_many :notices
 end
