@@ -1,33 +1,31 @@
 <section id="home-unlogged">
 	<div class="home-signin">
-		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-		  <div class="clearfix">
-				<%= f.label :email %>
-		  	<%= f.email_field :email %>
-			</div>
-			
-			<div class="clearfix">
-				<%= f.label :password %>
-		  	<%= f.password_field :password %>
-			</div>
+		<div class="row">
+			<div class="span10 offset1">
+				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+				  <div class="input_wrapper">
+						<%= f.label :email %>
+				  	<%= f.email_field :email %>
+					</div>
 
-		  <% if devise_mapping.rememberable? -%>
-				<div class="clearfix">
-					<%= f.label :remember_me, "Remember me?" %>
-			  	<%= f.check_box :remember_me %>
-				</div>
-		  <% end -%>
+					<div class="input_wrapper">
+						<%= f.label :password %>
+				  	<%= f.password_field :password %>
+					</div>
 
-		  <div>
-				<%= f.submit "Sign in", :class => 'btn btn-primary medium' %>
-				or <%= link_to "create an account", new_user_registration_path %>.
+				  <% if devise_mapping.rememberable? -%>
+						<div class="clearfix" style="display:none">
+					  	<%= f.check_box :remember_me, :checked => true %>
+						</div>
+				  <% end -%>
 				
-				<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-				  <div style="margin-top:1em;">
-						<%= link_to "Forgot your password?", new_password_path(resource_name) %>
-					</div>	
-				<% end -%>
-			</div>
-		<% end %>
+					<%= f.submit "Sign in", :class => 'btn btn-primary btn-large' %>
+
+					<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+					  <div style="margin-top:1em; clear:both;">
+							<%= link_to "Forgot your password?", new_password_path(resource_name) %>
+						</div>	
+					<% end -%>
+			<% end %>
 	</div>
 </section>
