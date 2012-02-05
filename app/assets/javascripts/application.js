@@ -17,12 +17,3 @@ $(document).ready(function() {
 	$(".tabs a:first").tab('show')
 });
 
-detect_input: function (elmt) {
-     if ($(elmt).value !== '') {
-         $(elmt).up('.input_wrapper').addClassName('filled');
-         $(elmt).up('form').removeClassName('all_empty')
-     } else {
-         $(elmt).up('.input_wrapper').removeClassName('filled')
-     }
- }
-
