@@ -9,7 +9,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.5'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
-	gem 'therubyracer'
 end
 
 group :test do
@@ -22,6 +21,7 @@ group :test do
 end
 
 group :development do
+	gem 'therubyracer'
   gem 'rspec-rails', '2.6.1'
 	gem 'sqlite3'
 	gem 'populator'
