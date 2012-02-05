@@ -1,4 +1,4 @@
-<% if @closed_notices.nil? %>
+<% if @closed_notices %>
 	<ul>
 		<% @closed_notices.each do |notice| %>
 			<li><%= link_to "#{notice.summary}", notice %></li>
