@@ -15,6 +15,10 @@ body {
 	position:relative !important;
 }
 
+.container {
+	position:relative;
+}
+
 .container > section {
 	margin-top: 60px;
 }
@@ -60,12 +64,24 @@ p.alert {background: rgba(200,50,50,.3); border:1px solid rgba(200,50,50,.8);}
 p.notice {background: rgba(250,255,170,.3); border:1px solid rgba(240,230,210,1);}
 
 /* Unregistered home page aka Tumblr Sign In */
+#home-unlogged .signup {
+	position:absolute;
+	top:1em;
+	right:-2em;
+	opacity:.3;
+	-webkit-transition: opacity .3s linear;  
+}
+
+#home-unlogged .signup:hover { opacity:.8; -webkit-transition: opacity .3s linear;  }
+
 .home-signin {
 	top: 100px;
 	position: relative;
 	border: 1px solid #EBEBEB;
-	padding: 4em;
-	background: rgba(105,230,210, .1);
+	padding: 4em 4em 0;
+	background: rgba(250,230,210, .3);
+	margin:0 auto;
+	width:600px;
 }
 
 .input_wrapper {
@@ -88,6 +104,7 @@ p.notice {background: rgba(250,255,170,.3); border:1px solid rgba(240,230,210,1)
 .input_wrapper input {
 	padding:.5em;
 	font-size:1.5em;
+	width:230px;
 }
 
 /* Notices */

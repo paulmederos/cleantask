@@ -1,31 +1,31 @@
 <section id="home-unlogged">
+	<%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-large signup' %>
+	
 	<div class="home-signin">
-		<div class="row">
-			<div class="span10 offset1">
-				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-				  <div class="input_wrapper">
-						<%= f.label :email %>
-				  	<%= f.email_field :email %>
-					</div>
+		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+		  <div class="input_wrapper">
+				<%= f.label :email %>
+		  	<%= f.email_field :email, :placeholder => "eg. name@site.com" %>
+			</div>
 
-					<div class="input_wrapper">
-						<%= f.label :password %>
-				  	<%= f.password_field :password %>
-					</div>
+			<div class="input_wrapper">
+				<%= f.label :password %>
+		  	<%= f.password_field :password %>
+			</div>
 
-				  <% if devise_mapping.rememberable? -%>
-						<div class="clearfix" style="display:none">
-					  	<%= f.check_box :remember_me, :checked => true %>
-						</div>
-				  <% end -%>
-				
-					<%= f.submit "Sign in", :class => 'btn btn-primary btn-large' %>
+		  <% if devise_mapping.rememberable? -%>
+				<div class="clearfix" style="display:none">
+			  	<%= f.check_box :remember_me, :checked => true %>
+				</div>
+		  <% end -%>
+		
+			<%= f.submit "Sign in", :class => 'btn btn-primary btn-large' %>
 
-					<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-					  <div style="margin-top:1em; clear:both;">
-							<%= link_to "Forgot your password?", new_password_path(resource_name) %>
-						</div>	
-					<% end -%>
-			<% end %>
+			<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+			  <div style="margin-top:1em; clear:both;">
+					<%= link_to "Forgot your password?", new_password_path(resource_name) %>
+				</div>	
+			<% end -%>
+		<% end %>
 	</div>
 </section>
