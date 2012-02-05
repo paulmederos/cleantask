@@ -6,6 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require_tree .
 
 $(document).ready(function() {
@@ -13,4 +14,7 @@ $(document).ready(function() {
 	  checkedLabel: 'YES',
 	  uncheckedLabel: 'NO'
 	});
+	
+	$(".tabs a:first").tab('show')
 });
+

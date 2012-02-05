@@ -1,0 +1,9 @@
+<% if @closed_notices %>
+	<ul>
+		<% @closed_notices.each do |notice| %>
+			<li><%= link_to "#{notice.summary}", notice %></li>
+		<% end %>
+	</ul>
+<% else %>	
+	<p>There are currently no closed notices associated with <%= @facility.name %>.</p>
+<% end %>

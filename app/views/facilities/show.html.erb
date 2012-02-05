@@ -17,18 +17,23 @@
 		<div class="span8">
 			
 			<div class="panel">
-				<h3>Open Notices</h3>
+				<h3>Notices for <%= @facility.name %></h3>
 				<div class="details">
 					<%= link_to 'Open a New Notice', new_notice_path, :class => 'btn pull-right' %>
-					<% if @notices %>
-						<ul>
-							<% @notices.each do |notice| %>
-								<li><%= link_to "#{notice.summary}", notice %></li>
-							<% end %>
-						</ul>
-					<% else %>	
-						<p>There are currently no open notices associated with <%= @facility.name %>.</p>
-					<% end %>	
+					<ul class="tabs nav nav-tabs">
+					  <li><a href="#open-notices" data-toggle="tab"><%= @open_notices.count %> open notices</a></li>
+					  <li><a href="#closed-notices" data-toggle="tab"><%= @closed_notices.count %> closed notices</a></li>
+					</ul>
+					
+					<div class="tab-content">
+					  <div class="tab-pane active" id="open-notices">
+					  	<%= render 'notices/open-notices' %>	
+					  </div>
+					  <div class="tab-pane" id="closed-notices">
+							<%= render 'notices/closed-notices' %>
+					  </div>
+					</div> <!-- /tab-content> -->
+					
 				</div>
 			</div>
 		
