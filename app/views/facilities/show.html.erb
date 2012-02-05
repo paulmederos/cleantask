@@ -1,6 +1,6 @@
 <section id="facility-show">
 	<div class ="page-header">
-		<h1><%= link_to @facility.client.name, @facility.client unless @facility.client == nil %> : <%= @facility.name %></h1>
+		<h2><%= link_to @facility.client.name, @facility.client unless @facility.client == nil %> : <%= @facility.name %></h2>
 	</div>
 
 	<div class="row">
@@ -20,20 +20,7 @@
 				<h3>Notices for <%= @facility.name %></h3>
 				<div class="details">
 					<%= link_to 'Open a New Notice', new_notice_path, :class => 'btn pull-right' %>
-					<ul class="tabs nav nav-tabs">
-					  <li><a href="#open-notices" data-toggle="tab"><%= @open_notices.count %> open notices</a></li>
-					  <li><a href="#closed-notices" data-toggle="tab"><%= @closed_notices.count %> closed notices</a></li>
-					</ul>
-					
-					<div class="tab-content">
-					  <div class="tab-pane active" id="open-notices">
-					  	<%= render 'notices/open-notices' %>	
-					  </div>
-					  <div class="tab-pane" id="closed-notices">
-							<%= render 'notices/closed-notices' %>
-					  </div>
-					</div> <!-- /tab-content> -->
-					
+					<%= render 'notices/notice_detail'%>					
 				</div>
 			</div>
 		

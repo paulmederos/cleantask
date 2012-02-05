@@ -93,3 +93,22 @@ section#notice .panel h3 i {
 	font-weight:normal;
 	font-size:.6em;
 }
+
+
+
+
+/* Bootstrap Modifications */
+.tabs {	border-bottom:none !important; }
+.tabs li {
+	position:relative;
+	z-index:1;
+}
+
+.tab-content {
+	background: white;
+	position: relative;
+	top: -18px;
+	padding-top: 2em;
+	border: 1px solid rgb(221, 221, 221);
+	padding: 2em 1em 1em;
+}

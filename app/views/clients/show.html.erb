@@ -1,6 +1,6 @@
-<section id="client_show">
+<section id="client-show">
 	<div class ="page-header">
-		<h1><%= @client.name %></h1>
+		<h2><%= @client.name %></h2>
 	</div>
 
 	<div class="row">
@@ -10,29 +10,14 @@
 			<h6>Created <%= @client.created_at.strftime("%m/%d/%Y | %I:%M%p") %>.</h6>
 			<p>This is where a description of the client would go. Maybe
 				a list of all Client Users that have access to the system?</p>
-			<%= button_to 'Delete Client', client_path, :method => :delete, 
-										:confirm => "Are you sure you want to remove this client? This is irreversible!", :class => 'btn danger' %>
+			<%= link_to 'Edit Client Details', edit_client_path, :class => 'btn btn-info' %>
 		</div>
 		<div class="span8">		
 			<div class="panel">
-				<h3>All Notices in <%= @client.name %> properties</h3>
+				<h3>All Notices for <%= @client.name %> properties</h3>
 				<div class="details">
 					<%= link_to 'Open a New Notice', new_notice_path, :class => 'btn pull-right' %>
-					
-					<ul class="tabs nav nav-tabs">
-					  <li><a href="#open-notices" data-toggle="tab"><%= @open_notices.count %> open notices</a></li>
-					  <li><a href="#closed-notices" data-toggle="tab"><%= @closed_notices.count %> closed notices</a></li>
-					</ul>
-					
-					<div class="tab-content">
-					  <div class="tab-pane active" id="open-notices">
-					  	<%= render 'notices/open-notices' %>	
-					  </div>
-					  <div class="tab-pane" id="closed-notices">
-							<%= render 'notices/closed-notices' %>
-					  </div>
-					</div> <!-- /tab-content> -->
-					
+					<%= render 'notices/notice_detail' %>	
 				</div>
 			</div>
 		

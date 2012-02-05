@@ -1,0 +1,9 @@
+<% if @open_notices %>
+	<ul>
+		<% @open_notices.each do |notice| %>
+			<li><%= link_to "#{notice.summary}", notice %></li>
+		<% end %>
+	</ul>
+<% else %>	
+	<p>There are currently no open notices. <%= link_to "Create a new notice.", new_notice_path %></p>
+<% end %>

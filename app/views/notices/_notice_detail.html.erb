@@ -1,0 +1,13 @@
+<ul class="tabs nav nav-tabs">
+  <li class="active"><a href="#open-notices" data-toggle="tab"><%= @open_notices.count %> open notices</a></li>
+  <li><a href="#closed-notices" data-toggle="tab"><%= @closed_notices.count %> closed notices</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="open-notices">
+  	<%= render 'notices/open_notices' %>	
+  </div>
+  <div class="tab-pane" id="closed-notices">
+		<%= render 'notices/closed_notices' %>
+  </div>
+</div>

@@ -1,18 +1,19 @@
-<section id="client-new">
+<section id="client-edit">
 	<div class ="page-header">
-		<h1>Create a new Client</h1>
+		<h1>Editing <%= @client.name %></h1>
 	</div>
 
 	<div class="row">
 		<div class="span4">
 			<%= link_to 'Back', :back %>
-			<h2>Adding a Client</h2>
+			<h2>Editing a Client</h2>
 		  <p>Your clients are the lifeblood of your organization. Here, you'll be able
 			to enter all their corporate details for you to keep track of them.</p>
+			<%= link_to "Delete Client", @client, :method => :destroy, :confirm => "Are you sure you want to remove this client AND all facilities associates with it? This cannot be undone at the moment.", :class => 'btn btn-danger' %>
 		</div>
-		<div class="span12">
+		<div class="span8">
 			<div class="panel">
-			<%= form_for @client, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+			<%= form_for @client, :url => { :action => "update" }, :html => {:class => "nifty_form"} do |f| %>
 	  		<fieldset>
 					<legend>Basic Details</legend>
 					<div class="clearfix">
@@ -57,7 +58,7 @@
 		        </div>
 		      </div>
 					<div class="actions">
-						<%= f.submit "Create New Client", :class => 'btn success' %>
+						<%= f.submit "Update Client Information", :class => 'btn btn-success' %>
 		      </div>
 				</fieldset>
 			<% end %>

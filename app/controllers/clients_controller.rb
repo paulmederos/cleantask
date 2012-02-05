@@ -11,8 +11,8 @@ class ClientsController < ApplicationController
   def show
     @client = Client.find(params[:id])
     @facilities = Facility.find_all_by_client_id(params[:id])
-    @open_notices = Notice.find_all_by_facility_id_and_status(params[:id], "Open")
-    @closed_notices = Notice.find_all_by_facility_id_and_status(params[:id], "Closed")
+    @open_notices = Notice.find_all_by_facility_id_and_status(@facilities.each do |f| puts f.id end, "Open")
+    @closed_notices = Notice.find_all_by_facility_id_and_status(@facilities.each do |f| puts f.id end, "Closed")
     
     respond_to do |format|
       format.html # show.html.erb
