@@ -1,0 +1,32 @@
+<div class="row" id="client_user">
+	<div class="span12">
+		<div class="row">
+			<div class="span12 panel">
+				<h3>Notices in Your Facilities</h3>	
+				<div class="details">
+					<%= link_to 'Open a New Notice', new_notice_path, :class => 'btn pull-right' %>
+					<%= render 'notices/notice_detail'%>
+				</div>
+			</div>	
+		</div>
+			
+		<div class="row">				
+			<div class="span4">
+				<div class="panel">
+					<h3>
+						<%= link_to 'All Your Facilities', clients_path %>
+					</h3>	
+					<div class="details">
+						<ul>
+							<% @facilities.each do |facility| %>
+								<li><%= link_to "#{facility.name}", facility %></li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>

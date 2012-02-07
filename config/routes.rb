@@ -12,7 +12,7 @@ Cleantask::Application.routes.draw do
      match '/edit-profile', :to => 'registrations#edit', :as => :edit_profile
      match "/signout" => "sessions#destroy", :as => :signout
   end
-  
+    
   resources :users
   resources :clients
   resources :facilities

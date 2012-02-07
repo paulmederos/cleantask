@@ -1,9 +1,22 @@
-<% if @closed_notices %>
-	<ul>
-		<% @closed_notices.each do |notice| %>
-			<li><%= link_to "#{notice.summary}", notice %></li>
-		<% end %>
-	</ul>
+<% if !@closed_notices.empty? %>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Posted</th>
+				<th>Facility</th>
+				<th>Summary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @closed_notices.each do |notice| %>
+				<tr>
+					<td><%= time_ago_in_words(notice.created_at) %> ago</td>
+					<td><%= notice.facility.name %></td>
+					<td><%= link_to "#{notice.summary}", notice %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 <% else %>	
 	<p>No notices have been closed.</p>
 <% end %>

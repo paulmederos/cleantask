@@ -2,58 +2,10 @@
 	<div class="page-header">
 	    <h1>Dashboard</h1>
 	</div>
-	<div class="row">
-		<aside class="span3">
-			<h2>We are now home!</h2>
-			<p>This is where the entire list of clients will
-				go for a particular user. They will be able 
-				to see quick glances of statuses.</p>
-		</aside>
-		<div class="span8">
-			<div class="row">
-				<div class="span8 panel" id="dashboard-all-notices">
-					<h3>All <%= link_to "Open Notices", notices_path %> from All Clients</h3>	
-					<div class="details">
-						<ul>
-							<% @notices.each do |notice| %>
-								<li><%= link_to "#{notice.summary}", notice %></li>
-							<% end %>
-						</ul>
-					</div>
-				</div>	
-			</div>
-				
-			<div class="row">	
-				<div class="span4">
-					<div class="panel">
-							<h3>
-								<%= link_to 'All Clients', clients_path %>
-							</h3>	
-							<div class="details">
-								<%= link_to 'Add Client', new_client_path, :class => 'btn pull-right'%>
-								<ul>
-									<% @clients.each do |client| %>
-										<li><%= link_to "#{client.name}", client %></li>
-									<% end %>
-								</ul>
-							</div>
-						</div>
-				</div>
-				
-				<div class="span4">
-					<div class="panel">
-							<h3>All Facilities</h3>
-							<div class="details">
-								<%= link_to 'Add Facility', new_facility_path, :class => 'btn pull-right' %>
-								<ul>
-									<% @facilities.each do |facility| %>
-										<li><%= link_to "#{facility.name}", facility %></li>
-									<% end %>
-								</ul>
-							</div>
-						</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<% if current_user.client_user? %>
+		<%= render "pages/client/dashboard" %>
+	<% else %>
+		<%= render "pages/vendor/dashboard" %>
+	<% end %>	
+
 </section>

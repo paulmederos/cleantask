@@ -29,7 +29,7 @@
 			  <% end -%>
 
 			  <div class="actions">
-					<%= f.submit "Sign in", :class => 'btn primary medium' %>
+					<%= f.submit "Sign in", :class => 'btn btn-primary medium' %>
 					or <%= link_to "create an account", new_user_registration_path %>.
 					
 					<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>

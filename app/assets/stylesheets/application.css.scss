@@ -63,7 +63,9 @@ p.notice, p.alert {
 p.alert {background: rgba(200,50,50,.3); border:1px solid rgba(200,50,50,.8);}
 p.notice {background: rgba(250,255,170,.3); border:1px solid rgba(240,230,210,1);}
 
-/* Unregistered home page aka Tumblr Sign In */
+/* 	**************************
+	Unregistered User Home page (aka Tumblr-style login)
+	************************** */
 #home-unlogged .signup {
 	position:absolute;
 	top:1em;
@@ -107,7 +109,18 @@ p.notice {background: rgba(250,255,170,.3); border:1px solid rgba(240,230,210,1)
 	width:230px;
 }
 
-/* Notices */
+/* 	**************************
+	Client User Dashboard
+	************************** */
+table span.notice-comments-count {
+	float:right;
+	margin-left:1em;
+}
+
+
+/* 	**************************
+	Notices
+	************************** */
 .notice-response {
 	border:1px solid rgba(200, 210, 210,.4);
 	padding:.6em;
@@ -131,10 +144,24 @@ section#notice .panel h3 i {
 	font-size:.6em;
 }
 
+table tr.priority-immediate td, span.priority-immediate {
+	background:rgba(240,10,20,.1) !important;
+}
+	span.priority-immediate {padding:.2em;}
 
 
 
-/* Bootstrap Modifications */
+
+
+
+
+
+
+
+
+/* 	**************************
+	Bootstrap Modifications
+	************************** */
 .tabs {	border-bottom:none !important; }
 .tabs li {
 	position:relative;

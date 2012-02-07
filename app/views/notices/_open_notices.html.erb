@@ -1,9 +1,22 @@
-<% if @open_notices %>
-	<ul>
-		<% @open_notices.each do |notice| %>
-			<li><%= link_to "#{notice.summary}", notice %></li>
-		<% end %>
-	</ul>
+<% if !@open_notices.empty? %>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Posted</th>
+				<th>Facility</th>
+				<th>Summary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @open_notices.each do |notice| %>
+				<% if notice.priority == "Immediate" %><tr class="priority-immediate"><% else %><tr><% end %>
+					<td><%= time_ago_in_words(notice.created_at) %> ago</td>
+					<td><%= notice.facility.name %></td>
+					<td><span class="notice-comments-count"></span> <%= link_to "#{notice.summary}", notice %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 <% else %>	
 	<p>There are currently no open notices. <%= link_to "Create a new notice.", new_notice_path %></p>
 <% end %>

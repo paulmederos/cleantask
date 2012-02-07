@@ -21,7 +21,7 @@
 					<div class="notice-specs">
 						<p>
 							<b><%= @notice.notice_type.humanize %></b> posted by <%= link_to @notice.user.name, @notice.user %>			
-							for <%= link_to @notice.facility.name, @notice.facility %> <%= time_ago_in_words(@notice.created_at) %> ago.
+							for <%= link_to @notice.facility.name, @notice.facility %> <%= time_ago_in_words(@notice.created_at) %> ago on <%= @notice.created_at.strftime("%m/%d/%y  at %I:%M %p")%>.
 							
 							<% if @notice.user == current_user %>
 								<div class="notice-controls">

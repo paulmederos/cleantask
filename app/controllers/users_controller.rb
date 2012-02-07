@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   # before_filter :correct_user, :only => [:edit, :update]
 
   def index
+    if current_user.client_user?
+      redirect_to :root
+      return
+    end
+    
     @users = User.order("users.created_at DESC")
 
     respond_to do |format|
