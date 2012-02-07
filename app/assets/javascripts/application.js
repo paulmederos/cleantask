@@ -10,11 +10,13 @@
 //= require_tree .
 
 $(document).ready(function() {
+	$(".chzn-select").chosen();
+	
   	$(':checkbox').iphoneStyle({
 	  checkedLabel: 'YES',
 	  uncheckedLabel: 'NO'
 	});
 	
-	$(".tabs a:first").tab('show')
+	$(".tabs a:first").tab('show');	
 });
 

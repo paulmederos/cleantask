@@ -10,8 +10,13 @@ class NoticesController < ApplicationController
   end
 
   def new
+    @clients = current_user.clients.find(:all, :order => "created_at DESC")
+    @facilities = []
+    @clients.each do |client|
+      @facilities += client.facilities.find(:all, :order => "name ASC")
+    end
+    
     @notice = Notice.new
-    @facilities = Facility.all
   end
 
   def create

@@ -4,7 +4,7 @@
 	<div class="clearfix">
 		<%= f.label :facility_id %>
     <div class="input">
-      <%= collection_select(:notice, :facility_id, @facilities, :id, :name, options = {:prompt => "Select a facility"}, :class =>"clients_select") %>
+      <%= collection_select(:notice, :facility_id, @facilities, :id, :name, options = {:prompt => "Select a facility"}, :class =>"chzn-select") %>
 		</div>
    </div>
 
@@ -18,14 +18,14 @@
 		<div class="clearfix">
 		  <%= f.label :summary %>
 			<div class="input">
-			  	<%= f.text_field :summary %>
+			  	<%= f.text_field :summary, :class => "span7" %>
 			</div>
 		</div>
 		
   	<div class="clearfix">
     	<%= f.label :detail, "Please elaborate on the details, if needed." %>
 			<div class="input">
-    		<%= f.text_area :detail %>
+    		<%= f.text_area :detail, :class => "span7", :rows => "4" %>
 			</div>
   	</div>
 
@@ -37,7 +37,7 @@
   </div>
 
   <div class="actions">
-		<%= f.submit "Update Notice", :class => "btn success" %>
-		<%= link_to "or cancel", @notice %>
+		<%= f.submit :class => "btn success" %>
+		<%= link_to "or cancel", :root %>
 	</div>
 <% end %>

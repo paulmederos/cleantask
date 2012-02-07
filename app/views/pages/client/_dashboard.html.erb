@@ -11,17 +11,28 @@
 		</div>
 			
 		<div class="row">				
-			<div class="span4">
+			<div class="span6">
 				<div class="panel">
 					<h3>
-						<%= link_to 'All Your Facilities', clients_path %>
+						<%= link_to 'All of Your Facilities', clients_path %>
 					</h3>	
 					<div class="details">
-						<ul>
-							<% @facilities.each do |facility| %>
-								<li><%= link_to "#{facility.name}", facility %></li>
-							<% end %>
-						</ul>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Address</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @facilities.each do |facility| %>
+									<tr>
+										<td><%= link_to facility.name, facility %></td>
+										<td><%= facility.address %></td>
+									</tr>
+								<% end %>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
