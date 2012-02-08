@@ -15,13 +15,11 @@ body {
 	position:relative !important;
 }
 
-.container {
+.container.main {
 	position:relative;
+	padding-top: 60px;
 }
 
-.container > section {
-	margin-top: 60px;
-}
 
 .panel {
 	margin-bottom:1em;
